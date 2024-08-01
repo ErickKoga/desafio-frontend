@@ -10,8 +10,11 @@ const useStockStore = create<StockState>((set) => ({
   stocks: [],
   update: (symbol: string, price: number) => {
     set((state) => {
+      const timestamp = Date.now();
+
       const index = state.stocks.findIndex((stock) => stock.symbol === symbol);
       const stocks = state.stocks;
+
       if (index !== -1) {
         const currentStock = stocks[index];
         const newDirection =
@@ -19,18 +22,25 @@ const useStockStore = create<StockState>((set) => ({
             ? Direction.Up
             : price < currentStock.price
               ? Direction.Down
-              : null;
+              : currentStock.direction;
+
+        const newHistory = [
+          ...currentStock.history,
+          { price, timestamp },
+        ].slice(-10);
 
         stocks[index] = {
           ...currentStock,
           price,
-          direction: newDirection ?? currentStock.direction,
+          direction: newDirection,
+          history: newHistory,
         };
       } else {
-        const newStock = {
+        const newStock: Stock = {
           symbol,
           price,
           direction: Direction.None,
+          history: [{ price, timestamp }],
         };
         stocks.push(newStock);
       }

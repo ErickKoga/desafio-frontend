@@ -6,9 +6,33 @@ vi.mock("../stores/useStocks", () => ({
   __esModule: true,
   default: () => ({
     stocks: [
-      { symbol: "AAPL", price: 150, direction: "up" },
-      { symbol: "GOOG", price: 2800, direction: "down" },
-      { symbol: "AMZN", price: 3300, direction: "none" },
+      {
+        symbol: "AAPL",
+        price: 150,
+        direction: "up",
+        history: [
+          { price: 150, timestamp: expect.any(Number) },
+          { price: 160, timestamp: expect.any(Number) },
+        ],
+      },
+      {
+        symbol: "GOOG",
+        price: 280,
+        direction: "down",
+        history: [
+          { price: 280, timestamp: expect.any(Number) },
+          { price: 290, timestamp: expect.any(Number) },
+        ],
+      },
+      {
+        symbol: "AMZN",
+        price: 330,
+        direction: "none",
+        history: [
+          { price: 330, timestamp: expect.any(Number) },
+          { price: 320, timestamp: expect.any(Number) },
+        ],
+      },
     ],
   }),
 }));
