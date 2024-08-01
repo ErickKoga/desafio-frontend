@@ -1,11 +1,14 @@
 import { render, screen } from "@testing-library/react";
+import * as Recharts from "recharts";
 import { ResponsiveContainerProps } from "recharts";
 import { describe, it, vi } from "vitest";
 import { Direction, Stock } from "../models/stock";
 import StockCard from "./StockCard";
 
 vi.mock("recharts", async () => {
-  const { ...original } = await import("recharts");
+  const originalModule = await import("recharts");
+
+  const original = originalModule as typeof Recharts;
 
   return {
     ...original,
