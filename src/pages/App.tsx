@@ -1,32 +1,17 @@
-import React, { useEffect } from "react";
-import { toBRL } from "../helpers/monetary";
+import { useEffect } from "react";
+import Header from "../components/Header";
 import setupWebSocket from "../services/quotesWebsocket";
-import useStocks from "../stores/useStocks";
+import Home from "./Home";
 
-const App: React.FC = () => {
-  const { stocks } = useStocks();
-
+const App = () => {
   useEffect(() => {
     setupWebSocket();
   }, []);
 
   return (
-    <div>
-      <h1>Stock Prices</h1>
-      {stocks.map((stock) => (
-        <div key={stock.symbol}>
-          <h2>{stock.symbol}</h2>
-          <p>
-            {toBRL(stock.price)}
-            {stock.direction === "up" && (
-              <span style={{ color: "green" }}>▲</span>
-            )}
-            {stock.direction === "down" && (
-              <span style={{ color: "red" }}>▼</span>
-            )}
-          </p>
-        </div>
-      ))}
+    <div className="h-screen w-full overflow-y-auto">
+      <Header />
+      <Home />
     </div>
   );
 };
