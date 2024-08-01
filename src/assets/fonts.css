@@ -1,0 +1,139 @@
+@font-face {
+  font-family: "DIN Pro";
+  src: url("./fonts/DIN Pro 400.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DIN Pro";
+  src: url("./fonts/DIN Pro Italic 400.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "DIN Pro";
+  src: url("./fonts/DIN Pro Bold 700.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DIN Pro";
+  src: url("./fonts/DIN Pro Bold Italic 700.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "DIN Pro";
+  src: url("./fonts/DIN Pro Black 900.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DIN Pro";
+  src: url("./fonts/DIN Pro Black Italic 900.otf") format("opentype");
+  font-weight: 900;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "DIN Pro Condensed";
+  src: url("./fonts/DIN Pro Condensed Regular 400.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DIN Pro Condensed";
+  src: url("./fonts/DIN Pro Condensed Italic 400.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "DIN Pro Condensed";
+  src: url("./fonts/DIN Pro Condensed Light 300.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DIN Pro Condensed";
+  src: url("./fonts/DIN Pro Condensed Light Italic 300.otf") format("opentype");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "DIN Pro Condensed";
+  src: url("./fonts/DIN Pro Condensed Medium 500.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DIN Pro Condensed";
+  src: url("./fonts/DIN Pro Condensed Medium Italic 500.otf") format("opentype");
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "DIN Pro Condensed";
+  src: url("./fonts/DIN Pro Condensed Bold 700.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DIN Pro Condensed";
+  src: url("./fonts/DIN Pro Condensed Bold Italic 700.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "DIN Pro Condensed";
+  src: url("./fonts/DIN Pro Condensed Black 900.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DIN Pro Condensed";
+  src: url("./fonts/DIN Pro Condensed Black Italic 900.otf") format("opentype");
+  font-weight: 900;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "DIN Pro";
+  src: url("./fonts/DIN Pro Light 300.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DIN Pro";
+  src: url("./fonts/DIN Pro Light Italic 300.otf") format("opentype");
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "DIN Pro";
+  src: url("./fonts/DIN Pro Medium 500.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "DIN Pro";
+  src: url("./fonts/DIN Pro Medium Italic 500.otf") format("opentype");
+  font-weight: 500;
+  font-style: italic;
+}

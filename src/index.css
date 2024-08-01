@@ -1,3 +1,4 @@
+@import "./assets/fonts.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,5 +9,28 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
+    --background: 0 0% 100%;
+    --foreground: 210 62% 9%;
+    --primary: 191 100% 41%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 62% 9%;
+    --secondary-foreground: 0 0% 100%;
+    --destructive: 4 90% 58%;
+    --destructive-foreground: 0 0% 100%;
+    --constructive: 145 100% 39%;
+    --constructive-foreground: 0 0% 100%;
+    --muted: 210 6% 93%;
+    --muted-foreground: 210 7% 53%;
+    --border: 220 13% 91%;
+  }
+
+  body {
+    @apply bg-background;
+    @apply text-foreground;
+  }
+
+  h1 {
+    @apply text-lg font-bold sm:text-xl;
   }
 }
