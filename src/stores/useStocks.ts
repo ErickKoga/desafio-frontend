@@ -1,16 +1,5 @@
 import { create } from "zustand";
-
-export enum Direction {
-  Up = "up",
-  Down = "down",
-  None = "none",
-}
-
-interface Stock {
-  symbol: string;
-  price: number;
-  direction: Direction;
-}
+import { Direction, Stock } from "../models/stock";
 
 interface StockState {
   stocks: Stock[];
@@ -29,8 +18,8 @@ const useStockStore = create<StockState>((set) => ({
           price > currentStock.price
             ? Direction.Up
             : price < currentStock.price
-            ? Direction.Down
-            : null;
+              ? Direction.Down
+              : null;
 
         stocks[index] = {
           ...currentStock,

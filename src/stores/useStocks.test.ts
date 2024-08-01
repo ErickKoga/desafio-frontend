@@ -1,5 +1,6 @@
 import { beforeEach, describe, expect, it } from "vitest";
-import useStockStore, { Direction } from "../stores/useStocks";
+import { Direction } from "../models/stock";
+import useStockStore from "../stores/useStocks";
 
 describe("useStockStore", () => {
   beforeEach(() => {
