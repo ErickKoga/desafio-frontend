@@ -6,7 +6,7 @@ export interface Stock {
 }
 
 export enum Direction {
-  None = "None",
-  Up = "Up",
-  Down = "Down",
+  NONE = "None",
+  UP = "Up",
+  DOWN = "Down",
 }

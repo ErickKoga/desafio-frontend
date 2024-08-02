@@ -13,16 +13,16 @@ interface StockCard extends HTMLAttributes<HTMLDivElement> {
 
 const StockCard = ({ stock, ...props }: StockCard) => {
   const textColorClass =
-    stock.direction === Direction.Up
+    stock.direction === Direction.UP
       ? "text-constructive"
-      : stock.direction === Direction.Down
+      : stock.direction === Direction.DOWN
         ? "text-destructive"
         : "";
 
   const arrowDirectionClass =
-    stock.direction === Direction.Up
+    stock.direction === Direction.UP
       ? ""
-      : stock.direction === Direction.Down
+      : stock.direction === Direction.DOWN
         ? "rotate-180"
         : "hidden";
 

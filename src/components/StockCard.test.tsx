@@ -22,7 +22,7 @@ describe("StockCard Component", () => {
   const stock: Stock = {
     symbol: "AAPL",
     price: 150,
-    direction: Direction.Up,
+    direction: Direction.UP,
     history: [
       { price: 145, timestamp: 1625151600000 },
       { price: 150, timestamp: 1625155200000 },
@@ -41,7 +41,7 @@ describe("StockCard Component", () => {
 
     const stockDown: Stock = {
       ...stock,
-      direction: Direction.Down,
+      direction: Direction.DOWN,
     };
     const { container: containerDown } = render(
       <StockCard stock={stockDown} />,
@@ -52,7 +52,7 @@ describe("StockCard Component", () => {
 
     const stockNone: Stock = {
       ...stock,
-      direction: Direction.None,
+      direction: Direction.NONE,
     };
     const { container: containerNone } = render(
       <StockCard stock={stockNone} />,
