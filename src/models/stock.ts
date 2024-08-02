@@ -10,3 +10,8 @@ export enum Direction {
   UP = "Up",
   DOWN = "Down",
 }
+
+export enum SortOrder {
+  HIGH = "High",
+  LOW = "Low",
+}
