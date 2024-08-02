@@ -1,7 +1,7 @@
 import useStockStore from "../stores/useStocks";
 
 const setupWebSocket = () => {
-  const { update } = useStockStore.getState();
+  const { batchUpdate } = useStockStore.getState();
 
   const quotesmockUrl = import.meta.env.APP_QUOTESMOCK_URL;
   const quotesmockPort = import.meta.env.APP_QUOTESMOCK_PORT;
@@ -9,6 +9,8 @@ const setupWebSocket = () => {
 
   try {
     const socket = new WebSocket(socketUrl);
+    const batch: { symbol: string; price: number }[] = [];
+    let timer: NodeJS.Timeout | null = null;
 
     socket.onopen = () => {
       console.log("WebSocket connection established");
@@ -17,9 +19,18 @@ const setupWebSocket = () => {
     socket.onmessage = (event) => {
       const message = JSON.parse(event.data);
       const [symbol, price] = Object.entries(message).find(
-        ([key]) => key !== "timestamp"
+        ([key]) => key !== "timestamp",
       ) as [string, number];
-      update(symbol, price);
+      batch.push({ symbol, price });
+
+      if (!timer) {
+        timer = setInterval(() => {
+          if (batch.length > 0) {
+            const updates = batch.splice(0, 5);
+            batchUpdate(updates);
+          }
+        }, 100);
+      }
     };
 
     socket.onerror = (error) => {
@@ -28,7 +39,10 @@ const setupWebSocket = () => {
 
     socket.onclose = () => {
       console.log("WebSocket connection closed");
-      setTimeout(setupWebSocket, 1000);
+      if (timer) {
+        clearInterval(timer);
+      }
+      setTimeout(setupWebSocket, 100);
     };
   } catch (error) {
     console.error("WebSocket setup failed:", error);
