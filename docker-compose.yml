@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  # API Service
+  client:
+    container_name: client
+    build:
+      context: .
+      args:
+        - APP_PORT=${APP_PORT}
+        - APP_QUOTESMOCK_URL=${APP_QUOTESMOCK_URL}
+        - APP_QUOTESMOCK_PORT=${APP_QUOTESMOCK_PORT}
+      dockerfile: Dockerfile
+    environment:
+      - APP_PORT=${APP_PORT}
+    ports:
+      - "${APP_PORT}:${APP_PORT}"
+    restart: unless-stopped
+    depends_on:
+      - quotesmock
+    networks:
+      - network
+
+  # Quotesmock Service
+  quotesmock:
+    container_name: quotesmock
+    image: toroinvest/quotesmock
+    ports:
+      - "${APP_QUOTESMOCK_PORT}:${APP_QUOTESMOCK_PORT}"
+    restart: always
+    networks:
+      - network
+
+networks:
+  network:
+    name: desafio-frontend-network
