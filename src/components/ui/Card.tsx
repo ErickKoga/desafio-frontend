@@ -1,5 +1,5 @@
+import { cn } from "@/utils/cn";
 import { forwardRef, HTMLAttributes } from "react";
-import { cn } from "../../utils/cn";
 
 interface Card extends HTMLAttributes<HTMLDivElement> {}
 

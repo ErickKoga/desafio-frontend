@@ -1,7 +1,7 @@
+import Header from "@/components/Header";
+import Home from "@/pages/Home";
+import setupWebSocket from "@/services/quotesWebsocket";
 import { useEffect } from "react";
-import Header from "../components/Header";
-import setupWebSocket from "../services/quotesWebsocket";
-import Home from "./Home";
 
 const App = () => {
   useEffect(() => {

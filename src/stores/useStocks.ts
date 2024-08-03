@@ -1,5 +1,5 @@
+import { Direction, SortOrder, Stock } from "@/models/stock";
 import { create } from "zustand";
-import { Direction, SortOrder, Stock } from "../models/stock";
 
 interface StockState {
   stocks: Stock[];

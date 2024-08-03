@@ -1,5 +1,5 @@
+import { cn } from "@/utils/cn";
 import { ButtonHTMLAttributes, forwardRef } from "react";
-import { cn } from "../../utils/cn";
 
 interface Button extends ButtonHTMLAttributes<HTMLButtonElement> {
   active?: boolean;

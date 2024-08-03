@@ -1,7 +1,7 @@
+import App from "@/pages/App";
+import setupWebSocket from "@/services/quotesWebsocket";
 import { render, screen, waitFor } from "@testing-library/react";
 import { beforeEach, describe, it, vi } from "vitest";
-import setupWebSocket from "../services/quotesWebsocket";
-import App from "./App";
 
 vi.mock("../services/quotesWebsocket", () => ({
   __esModule: true,

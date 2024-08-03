@@ -1,9 +1,9 @@
-import Ring from "../assets/ring.svg";
-import StockCard from "../components/StockCard";
-import Button from "../components/ui/Button";
-import { SortOrder } from "../models/stock";
-import useStocks from "../stores/useStocks";
-import useWebSocketStore from "../stores/useWebSocketStore";
+import Ring from "@/assets/ring.svg";
+import StockCard from "@/components/StockCard";
+import Button from "@/components/ui/Button";
+import { SortOrder } from "@/models/stock";
+import useStocks from "@/stores/useStocks";
+import useWebSocketStore from "@/stores/useWebSocketStore";
 
 const Home = () => {
   const { stocks, sortOrder, toggleSortOrder, sortStocks } = useStocks();

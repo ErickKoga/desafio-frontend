@@ -1,5 +1,5 @@
-import useStockStore from "../stores/useStocks";
-import useWebSocketStore from "../stores/useWebSocketStore";
+import useStockStore from "@/stores/useStocks";
+import useWebSocketStore from "@/stores/useWebSocketStore";
 
 const setupWebSocket = () => {
   const { batchUpdate } = useStockStore.getState();

@@ -1,6 +1,6 @@
+import Home from "@/pages/Home";
 import { render, screen } from "@testing-library/react";
 import { describe, it, vi } from "vitest";
-import Home from "./Home";
 
 vi.mock("../stores/useStocks", () => ({
   __esModule: true,

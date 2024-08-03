@@ -1,5 +1,5 @@
+import useWebSocketStore from "@/stores/useWebSocketStore";
 import { beforeEach, describe, expect, it } from "vitest";
-import useWebSocketStore from "./useWebSocketStore";
 
 describe("useWebSocketStore", () => {
   beforeEach(() => {

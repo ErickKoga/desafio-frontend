@@ -1,9 +1,9 @@
 // Button.test.tsx
+import Button from "@/components/ui/Button";
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { vi } from "vitest";
-import Button from "./Button";
 
 describe("Button component", () => {
   it("renders correctly with default props", () => {
