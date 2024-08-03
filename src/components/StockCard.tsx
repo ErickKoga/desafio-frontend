@@ -1,9 +1,9 @@
 import Arrow from "@/assets/arrow.svg";
 import Card from "@/components/ui/Card";
-import { getCompany } from "@/helpers/getCompany";
-import { getCssVar } from "@/helpers/getCssVar";
-import { toBRL } from "@/helpers/monetary";
 import { Direction, Stock } from "@/models/stock";
+import { getCompany } from "@/utils/getCompany";
+import { getCssVar } from "@/utils/getCssVar";
+import { toBRL } from "@/utils/monetary";
 import { HTMLAttributes, useMemo } from "react";
 import { Area, AreaChart, ResponsiveContainer } from "recharts";
 
