@@ -40,7 +40,7 @@ const Home = () => {
           ))}
         </main>
       ) : (
-        connected && <Ring className="mx-auto mt-10 text-secondary" />
+        !connected && <Ring className="mx-auto mt-10 text-secondary" />
       )}
     </div>
   );
