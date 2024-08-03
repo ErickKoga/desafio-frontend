@@ -1,10 +1,13 @@
+import Ring from "../assets/ring.svg";
 import StockCard from "../components/StockCard";
 import Button from "../components/ui/Button";
 import { SortOrder } from "../models/stock";
 import useStocks from "../stores/useStocks";
+import useWebSocketStore from "../stores/useWebSocketStore";
 
 const Home = () => {
   const { stocks, sortOrder, toggleSortOrder, sortStocks } = useStocks();
+  const { connected } = useWebSocketStore();
 
   return (
     <div className="px-4 sm:px-20">
@@ -30,11 +33,15 @@ const Home = () => {
           </Button>
         </span>
       </div>
-      <main className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-        {stocks.map((stock) => (
-          <StockCard key={stock.symbol} stock={stock} />
-        ))}
-      </main>
+      {stocks && stocks.length ? (
+        <main className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {stocks.map((stock) => (
+            <StockCard key={stock.symbol} stock={stock} />
+          ))}
+        </main>
+      ) : (
+        connected && <Ring className="mx-auto mt-10 text-secondary" />
+      )}
     </div>
   );
 };
