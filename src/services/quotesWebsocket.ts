@@ -29,7 +29,7 @@ const setupWebSocket = () => {
       if (!timer) {
         timer = setInterval(() => {
           if (batch.length > 0) {
-            const updates = batch.splice(0, 5);
+            const updates = batch.splice(0, batch.length);
             batchUpdate(updates);
           }
         }, 100);
