@@ -11,7 +11,7 @@ const setupWebSocket = () => {
 
   try {
     const socket = new WebSocket(socketUrl);
-    const batch: { symbol: string; price: number }[] = [];
+    const batch = new Map<string, number>();
     let timer: NodeJS.Timeout | null = null;
 
     socket.onopen = () => {
@@ -24,15 +24,21 @@ const setupWebSocket = () => {
       const [symbol, price] = Object.entries(message).find(
         ([key]) => key !== "timestamp",
       ) as [string, number];
-      batch.push({ symbol, price });
+
+      batch.set(symbol, price);
 
       if (!timer) {
         timer = setInterval(() => {
-          if (batch.length > 0) {
-            const updates = batch.splice(0, batch.length);
-            batchUpdate(updates);
+          if (batch.size > 0) {
+            batchUpdate(
+              Array.from(batch.entries()).map(([symbol, price]) => ({
+                symbol,
+                price,
+              })),
+            );
+            batch.clear();
           }
-        }, 100);
+        }, 200);
       }
     };
 
