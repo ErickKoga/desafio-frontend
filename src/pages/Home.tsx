@@ -10,7 +10,7 @@ const Home = () => {
   const { connected } = useWebSocketStore();
 
   return (
-    <div className="px-4 sm:px-20">
+    <div className="px-4 pb-4 pt-20 sm:px-20 sm:pb-20">
       <div className="flex flex-col items-start justify-between gap-8 py-4 sm:py-8 md:flex-row">
         <h1 className="">Explore o mercado</h1>
         <span className="inline-flex items-center gap-2">
